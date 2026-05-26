@@ -1,0 +1,13 @@
+.meme-image {
+  width: 400px;
+  height: 400px;
+  object-fit: contain;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+}
+
+.meme-gallery {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}

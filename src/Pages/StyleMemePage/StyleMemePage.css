@@ -1,0 +1,35 @@
+.meme-container {
+  position: relative;
+  display: inline-block;
+}
+
+.meme-container img {
+  width: 500px;
+}
+
+.meme-text {
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px black;
+  cursor: move;
+  margin: 0;
+}
+.top-text,
+.bottom-text {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px black;
+}
+
+.top-text {
+  top: 10px;
+}
+
+.bottom-text {
+  bottom: 10px;
+}
