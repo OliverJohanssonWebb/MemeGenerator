@@ -1,8 +1,17 @@
 import Buttons from '../TextModifiers/Buttons/Buttons'
 import { useState } from 'react'
 import { Rnd } from 'react-rnd'
+import './StyleMemePage.css'
 
-const StyleMemePage = ({ selectedMeme }: { selectedMeme: string }) => {
+type StyleMemePageProps = {
+  selectedMeme: string
+  setSelectedPage: (page: string) => void
+}
+
+const StyleMemePage: React.FC<StyleMemePageProps> = ({
+  selectedMeme,
+  setSelectedPage,
+}) => {
   const [topText, setTopText] = useState('')
   const [bottomText, setBottomText] = useState('')
 
@@ -11,7 +20,7 @@ const StyleMemePage = ({ selectedMeme }: { selectedMeme: string }) => {
 
   return (
     <>
-      <h1>Style Meme</h1>
+      <h1>Style Meme And drag text</h1>
 
       <input
         value={topText}
@@ -30,19 +39,47 @@ const StyleMemePage = ({ selectedMeme }: { selectedMeme: string }) => {
         bottomFontSize={bottomFontSize}
         setTopFontSize={setTopFontSize}
         setBottomFontSize={setBottomFontSize}
+        setSelectedPage={setSelectedPage}
       />
 
-      <div className="meme-container">
-        <img src={selectedMeme} alt="Selected Meme" />
+      <div className="meme">
+        <img
+          className="meme-image"
+          src={selectedMeme}
+          alt="Selected Meme"
+          crossOrigin="anonymous"
+        />
 
-        <Rnd default={{ x: 100, y: 20, width: 200, height: 50 }}>
-          <p style={{ fontSize: topFontSize }}>
+        <Rnd
+          default={{
+            x: 100,
+            y: 20,
+            width: 200,
+            height: 50,
+          }}
+          enableResizing={false}
+        >
+          <p
+            className="meme-text"
+            style={{ fontSize: `${topFontSize}px` }}
+          >
             {topText}
           </p>
         </Rnd>
 
-        <Rnd default={{ x: 100, y: 300, width: 200, height: 50 }}>
-          <p style={{ fontSize: bottomFontSize }}>
+        <Rnd
+          default={{
+            x: 100,
+            y: 200,
+            width: 200,
+            height: 50,
+          }}
+          enableResizing={false}
+        >
+          <p
+            className="meme-text"
+            style={{ fontSize: `${bottomFontSize}px` }}
+          >
             {bottomText}
           </p>
         </Rnd>

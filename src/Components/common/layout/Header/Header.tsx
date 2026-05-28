@@ -1,10 +1,10 @@
-
+import './Header.css'
 
 const Header = () => {
   return (
-    <>
-        <h1>Meme Generator</h1>
-    </>
+    <header className="header">
+      <h1>Meme Generator</h1>
+    </header>
   )
 }
 

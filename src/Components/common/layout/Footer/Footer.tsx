@@ -1,7 +1,9 @@
-
+import './Footer.css'
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <footer className="footer">
+      <p>&copy; 2023 Meme Generator. All rights reserved.</p>
+    </footer>
   )
 }
 
